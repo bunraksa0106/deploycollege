@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rscollege</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header */
+    .head {
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      background: #222;
+      color: #fff;
+    }
+
+    .logo h1 {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .list ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .list a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .list a:hover {
+      color: #ff9800;
+    }
+
+    /* Product Grid */
+    .Product {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .prod {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      text-align: center;
+    }
+
+    .prod:hover {
+      transform: translateY(-5px);
+    }
+
+    .prod img {
+      display: block;
+      margin: 0 auto;
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .prod h2 {
+      font-size: 18px;
+      margin: 15px 0 10px;
+    }
+
+    .prod p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .prod button {
+      background: #ff9800;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 15px;
+    }
+
+    .prod button:hover {
+      background: #e68900;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 250px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 25px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .Product {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .head {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+      }
+      .list ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .Product {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="head">
+    <div class="logo">
+      <h1>RsCollege</h1>
+    </div>
+    <div class="list">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div class="Product">
+    <div class="prod">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBbAbR9qTefTwsAz43K5VSgE2uBPY6J6461Q&s" alt="">
+      <h2>Shirt for man in 2025 style</h2>
+      <p>Price: $9.99</p>
+      <button onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="prod">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShaMqO1oNMVi4x7lm7GIzCWtwNKI6RnG53Uw&s" alt="">
+      <h2>T-shirt</h2>
+      <p>Price: $5</p>
+      <button onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="prod">
+      <img src="../fuckkk.jpg" alt="Shoes 3">
+      <h2>Dumaaaaaa</h2>
+      <p>Price: $999999</p>
+      <button onclick="openModal()">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Thanks U | Contact: 0968782196</p>
+  </footer>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="paymentModal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <h2>Pay with KH QR</h2>
+      <img src="../photo_2025-08-30_21-55-02.jpg" alt="ACLEDA QR Code">
+      <p>Account: Bun Raksa</p>
+      <p>Phone: 0968782196</p>
+    </div>
+  </div>
+  <script>
+    function openModal() {
+      document.getElementById('paymentModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('paymentModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
