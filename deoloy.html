@@ -4,253 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rscollege</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    /* Header */
-    .head {
-      height: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 30px;
-      background: #222;
-      color: #fff;
-    }
-
-    .logo h1 {
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .list ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    .list a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .list a:hover {
-      color: #ff9800;
-    }
-
-    /* Product Grid */
-    .Product {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .prod {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-      text-align: center;
-    }
-
-    .prod:hover {
-      transform: translateY(-5px);
-    }
-
-    .prod img {
-      display: block;
-      margin: 0 auto;
-      height: 400px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .prod h2 {
-      font-size: 18px;
-      margin: 15px 0 10px;
-    }
-
-    .prod p {
-      color: #666;
-      margin-bottom: 15px;
-    }
-
-    .prod button {
-      background: #ff9800;
-      border: none;
-      padding: 10px 20px;
-      color: white;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-bottom: 15px;
-    }
-
-    .prod button:hover {
-      background: #e68900;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: white;
-      margin-top: 30px;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal-content img {
-      width: 250px;
-      margin-bottom: 15px;
-    }
-
-    .modal-content h2 {
-      margin-bottom: 10px;
-    }
-
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 25px;
-      cursor: pointer;
-      color: #fff;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.8);}
-      to {opacity: 1; transform: scale(1);}
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .Product {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .head {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-        text-align: center;
-      }
-      .list ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
-      .Product {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <!-- Header -->
-  <div class="head">
-    <div class="logo">
-      <h1>RsCollege</h1>
-    </div>
-    <div class="list">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <!-- Products -->
-  <div class="Product">
-    <div class="prod">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBbAbR9qTefTwsAz43K5VSgE2uBPY6J6461Q&s" alt="">
-      <h2>Shirt for man in 2025 style</h2>
-      <p>Price: $9.99</p>
-      <button onclick="openModal()">Buy Now</button>
+  <header class="bg-gray-800 text-white shadow-md">
+    <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center p-4">
+      <div class="logo">
+        <h1 class="text-2xl font-bold tracking-wider">RsCollege</h1>
+      </div>
+      <nav class="list mt-4 sm:mt-0">
+        <ul class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <li><a href="#" class="font-bold transition-colors duration-300 hover:text-orange-400">Home</a></li>
+          <li><a href="#" class="font-bold transition-colors duration-300 hover:text-orange-400">Products</a></li>
+          <li><a href="#" class="font-bold transition-colors duration-300 hover:text-orange-400">About</a></li>
+          <li><a href="#" class="font-bold transition-colors duration-300 hover:text-orange-400">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="prod">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShaMqO1oNMVi4x7lm7GIzCWtwNKI6RnG53Uw&s" alt="">
-      <h2>T-shirt</h2>
-      <p>Price: $5</p>
-      <button onclick="openModal()">Buy Now</button>
-    </div>
-    <div class="prod">
-      <img src="../fuckkk.jpg" alt="Shoes 3">
-      <h2>Dumaaaaaa</h2>
-      <p>Price: $999999</p>
-      <button onclick="openModal()">Buy Now</button>
-    </div>
-  </div>
+  </header>
 
-  <!-- Footer -->
-  <footer>
+  <main class="container mx-auto my-8 p-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg text-center transition-transform duration-300 ease-in-out hover:-translate-y-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBbAbR9qTefTwsAz43K5VSgE2uBPY6J6461Q&s" alt="Stylish Shirt" class="h-96 w-full object-cover">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold mt-2 mb-2">Shirt for man in 2025 style</h2>
+          <p class="text-gray-600 mb-4">Price: $9.99</p>
+          <button onclick="openModal()" class="bg-orange-500 text-white font-bold py-2 px-6 rounded-md cursor-pointer transition-colors duration-300 hover:bg-orange-600 mb-4">Buy Now</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg text-center transition-transform duration-300 ease-in-out hover:-translate-y-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShaMqO1oNMVi4x7lm7GIzCWtwNKI6RnG53Uw&s" alt="T-Shirt" class="h-96 w-full object-cover">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold mt-2 mb-2">T-shirt</h2>
+          <p class="text-gray-600 mb-4">Price: $5</p>
+          <button onclick="openModal()" class="bg-orange-500 text-white font-bold py-2 px-6 rounded-md cursor-pointer transition-colors duration-300 hover:bg-orange-600 mb-4">Buy Now</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg text-center transition-transform duration-300 ease-in-out hover:-translate-y-2">
+        <img src="../fuckkk.jpg" alt="Shoes" class="h-96 w-full object-cover">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold mt-2 mb-2">Dumaaaaaa</h2>
+          <p class="text-gray-600 mb-4">Price: $999999</p>
+          <button onclick="openModal()" class="bg-orange-500 text-white font-bold py-2 px-6 rounded-md cursor-pointer transition-colors duration-300 hover:bg-orange-600 mb-4">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center p-5 bg-gray-800 text-white mt-8">
     <p>&copy; Thanks U | Contact: 0968782196</p>
   </footer>
 
-  <!-- Payment Modal -->
-  <div class="modal" id="paymentModal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-      <h2>Pay with KH QR</h2>
-      <img src="../photo_2025-08-30_21-55-02.jpg" alt="ACLEDA QR Code">
-      <p>Account: Bun Raksa</p>
-      <p>Phone: 0968782196</p>
+  <div id="paymentModal" class="hidden fixed inset-0 z-50 bg-black/60 justify-center items-center">
+    <div class="bg-white p-6 rounded-lg text-center max-w-sm w-11/12 shadow-2xl relative">
+      <span onclick="closeModal()" class="absolute -top-2 -right-2 bg-gray-800 text-white rounded-full h-8 w-8 flex items-center justify-center text-lg cursor-pointer">&times;</span>
+      <h2 class="text-xl font-bold mb-4">Pay with KH QR</h2>
+      <img src="../photo_2025-08-30_21-55-02.jpg" alt="ACLEDA QR Code" class="w-64 mb-4 mx-auto rounded-md">
+      <p class="font-semibold">Account: Bun Raksa</p>
+      <p class="font-semibold">Phone: 0968782196</p>
     </div>
   </div>
+
   <script>
+    const paymentModal = document.getElementById('paymentModal');
+
     function openModal() {
-      document.getElementById('paymentModal').style.display = 'flex';
+      paymentModal.classList.remove('hidden');
+      paymentModal.classList.add('flex');
     }
+
     function closeModal() {
-      document.getElementById('paymentModal').style.display = 'none';
+      paymentModal.classList.add('hidden');
+      paymentModal.classList.remove('flex');
     }
   </script>
+
 </body>
 </html>
